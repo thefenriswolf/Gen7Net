@@ -4,6 +4,15 @@ src=$2
 dest=$3
 
 function cv_help() {
+  echo -e "
+                _     
+               | |    
+  _____   _____| |__  
+ / __\ \ / / __| '_ \ 
+| (__ \ V /\__ \ | | |
+ \___| \_(_)___/_| |_|
+                      
+		      "
   echo -e "cv.sh depends on the following utilities:\n \t rsync \n \t imagemagick \n \t detox \n \t find"
   echo -e "cv.sh can extract .jpg files from .dcm files using imagemagick."
   echo -e "It can also 'clean' your working directory by removing all created .jpg files \n and removes spaces from folder and filenames using the 'detox' utility!"
