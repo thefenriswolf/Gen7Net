@@ -1,0 +1,46 @@
+#+TITLE: Gen7Net - A CNN for classifiying adenocarcinoma of the prostate in MRI images
+#+AUTHOR: Stefan Rohrbacher
+#+OPTIONS: num:nil
+Gen7Net is a Convolutional Neural Network for classifying prostate cancer in MRI images.
+It was built with TensorFlow and Keras and is based on MobileNetV2.
+Training images were taken from the [[https://wiki.cancerimagingarchive.net/display/Public/PROSTATE-DIAGNOSIS#e31de0388cfa43f6af738c8e20831bd1][Cancer Imaging Archive]].
+
+* Contents
+
+** shell.nix
+Dependency handling was performed with nix-shell for this project.
+Make sure to have [[https://nixos.org/][nix]] installed, enter the dev environment with
+#+BEGIN_SRC bash
+nix-shell shell.nix
+#+END_SRC
+
+** cv.sh
+A bash script for converting ~.dcm~ to ~.jpg~.
+Run with
+#+BEGIN_SRC bash
+cv.sh <command> <source> <destination>
+#+END_SRC
+*** Commands
+- help | h: display help message
+- convert | cv: convert images from ~.dcm~ to ~.jpg~
+- clean | clear | clr: remove all ~.jpg~ files from <source>
+- transfer | copy | extract: transfer converted files to <destination> using rsync
+*** Dependencies
+Dependencies are handled by running ~nix-shell~ against ~shell.nix~.
+- detox: rename files and folders with unicode standard
+- findutils: find any ~.dcm~ or ~.jpg~ files in the source folder
+- rsync: transfer large quantities of files from A to B
+- tree: displays any folder structure in a tree view
+- imagemagick: does the heavy lifting of converting between image formats 
+
+** Gen7Net.ipynb
+jupyter-notebook for Gen7Net. I recommend running it with [[www.colab.google.com][Google Colab]].
+In order to run it locally, I recommend using [[www.docker.com][docker containers]] with a tensorflow packaging tool
+like [[https://github.com/pop-os/tensorman][tensorman]]
+*** Dependencies
+- tensorflow
+- keras
+- mobilenetv2
+- pandas
+- numpy
+- jupyter-notebook

@@ -15,7 +15,7 @@ function cv_help() {
 		      "
   echo -e "cv.sh depends on the following utilities:\n \t rsync \n \t imagemagick \n \t detox \n \t find"
   echo -e "cv.sh can extract .jpg files from .dcm files using imagemagick."
-  echo -e "It can also 'clean' your working directory by removing all created .jpg files \n and removes spaces from folder and filenames using the 'detox' utility!"
+  echo -e "It can also 'clean' your working directory by removing all created .jpg files \nand removes spaces from folder and filenames using the 'detox' utility!"
   echo -e "Once all files are converted cv.sh will rename them accourding to the folder structure they are in."
   echo -e "cv.sh can also extract the converted .jpg files from the curret working directory\nto another given folder using 'rsync'.\n"
   echo -e "Usage:\n \t cv.sh [command] [/path/to/source/] [/path/to/destination/]\n"
