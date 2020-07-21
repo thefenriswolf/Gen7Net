@@ -9,14 +9,15 @@ Training images were taken from the [[https://wiki.cancerimagingarchive.net/disp
 
 ** shell.nix
 Dependency handling was performed with nix-shell for this project.
-Make sure to have [[https://nixos.org/][nix]] installed, enter the dev environment with
+Make sure to have [[https://nixos.org/][nix]] installed. 
+Enter the dev environment with:
 #+BEGIN_SRC bash
 nix-shell shell.nix
 #+END_SRC
 
 ** cv.sh
 A bash script for converting ~.dcm~ to ~.jpg~.
-Run with
+Run with:
 #+BEGIN_SRC bash
 cv.sh <command> <source> <destination>
 #+END_SRC
@@ -34,9 +35,9 @@ Dependencies are handled by running ~nix-shell~ against ~shell.nix~.
 - imagemagick: does the heavy lifting of converting between image formats 
 
 ** Gen7Net.ipynb
-jupyter-notebook for Gen7Net. I recommend running it with [[www.colab.google.com][Google Colab]].
-In order to run it locally, I recommend using [[www.docker.com][docker containers]] with a tensorflow packaging tool
-like [[https://github.com/pop-os/tensorman][tensorman]]
+jupyter-notebook for Gen7Net. I recommend running it with [[https://colab.research.google.com/][Google Colab]].
+In order to run it locally, I recommend using [[https://hub.docker.com/r/tensorflow/tensorflow][docker containers]] with a tensorflow packaging tool
+like [[https://github.com/pop-os/tensorman][tensorman]].
 *** Dependencies
 - tensorflow
 - keras
